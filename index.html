@@ -1,261 +1,303 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Pendataan Orang - JCS</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Pendataan Orang - JCS1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1><i class="fas fa-users"></i> Aplikasi Pendataan Orang JCS</h1>
-            <p>Sistem manajemen data klien dan reservasi</p>
-        </header>
+      <header class="header">
+        <h1><i class="fas fa-users"></i> Aplikasi Pendataan Orang JCS</h1>
+        <p>Sistem manajemen data klien dan reservasi</p>
+      </header>
 
-        <div class="main-content">
-            <!-- Form Input -->
-            <section class="form-section">
-                <div class="form-header">
-                    <h2><i class="fas fa-plus-circle"></i> Tambah Data Baru</h2>
-                    <button class="toggle-form-btn" onclick="toggleForm()">
-                        <i class="fas fa-chevron-up"></i>
-                    </button>
-                </div>
-                
-                <form id="dataForm" class="data-form">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="kategori">Kategori</label>
-                            <select id="kategori" required>
-                                <option value="">Pilih Kategori</option>
-                                <option value="VIP">VIP</option>
-                                <option value="Regular">Regular</option>
-                                <option value="Corporate">Corporate</option>
-                                <option value="Individual">Individual</option>
-                            </select>
-                        </div>
+      <div class="main-content">
+        <!-- Form Input -->
+        <section class="form-section">
+          <div class="form-header">
+            <h2><i class="fas fa-plus-circle"></i> Tambah Data Baru</h2>
+            <button class="toggle-form-btn" onclick="toggleForm()">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+          </div>
 
-                        <div class="form-group">
-                            <label for="klien">Klien / Sumber</label>
-                            <input type="text" id="klien" placeholder="Nama klien atau sumber" required>
-                        </div>
+          <form id="dataForm" class="data-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="kategori">Kategori</label>
+                <select id="kategori" required>
+                  <option value="">Pilih Kategori</option>
+                  <option value="VIP">VIP</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Corporate">Corporate</option>
+                  <option value="Individual">Individual</option>
+                </select>
+              </div>
 
-                        <div class="form-group">
-                            <label for="pic">PIC Klien</label>
-                            <input type="text" id="pic" placeholder="Person in Charge" required>
-                        </div>
+              <div class="form-group">
+                <label for="klien">Klien / Sumber</label>
+                <input
+                  type="text"
+                  id="klien"
+                  placeholder="Nama klien atau sumber"
+                  required
+                />
+              </div>
 
-                        <div class="form-group">
-                            <label for="jumlah">Jumlah</label>
-                            <input type="number" id="jumlah" placeholder="Jumlah orang" min="1" required>
-                        </div>
+              <div class="form-group">
+                <label for="pic">PIC Klien</label>
+                <input
+                  type="text"
+                  id="pic"
+                  placeholder="Person in Charge"
+                  required
+                />
+              </div>
 
-                        <div class="form-group">
-                            <label for="noHp">No. HP</label>
-                            <input type="tel" id="noHp" placeholder="08xxxxxxxxxx" required>
-                        </div>
+              <div class="form-group">
+                <label for="jumlah">Jumlah</label>
+                <input
+                  type="number"
+                  id="jumlah"
+                  placeholder="Jumlah orang"
+                  min="1"
+                  required
+                />
+              </div>
 
-                        <div class="form-group">
-                            <label for="daerah">Daerah Asal</label>
-                            <input type="text" id="daerah" placeholder="Kota/Kabupaten" required>
-                        </div>
+              <div class="form-group">
+                <label for="noHp">No. HP</label>
+                <input
+                  type="tel"
+                  id="noHp"
+                  placeholder="08xxxxxxxxxx"
+                  required
+                />
+              </div>
 
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <select id="status" required>
-                                <option value="">Pilih Status</option>
-                                <option value="Pending">Pending</option>
-                                <option value="Confirmed">Confirmed</option>
-                                <option value="Cancelled">Cancelled</option>
-                                <option value="Completed">Completed</option>
-                            </select>
-                        </div>
+              <div class="form-group">
+                <label for="daerah">Daerah Asal</label>
+                <input
+                  type="text"
+                  id="daerah"
+                  placeholder="Kota/Kabupaten"
+                  required
+                />
+              </div>
 
-                        <div class="form-group">
-                            <label for="jamReservasi">Jam Reservasi JCS</label>
-                            <input type="datetime-local" id="jamReservasi" required>
-                        </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" required>
+                  <option value="">Pilih Status</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Cancelled">Cancelled</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
 
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="show" checked>
-                                <span class="checkmark"></span>
-                                Tampilkan di daftar
-                            </label>
-                        </div>
-                    </div>
+              <div class="form-group">
+                <label for="jamReservasi">Jam Reservasi JCS</label>
+                <input type="datetime-local" id="jamReservasi" required />
+              </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i> Simpan Data
-                        </button>
-                        <button type="button" class="btn btn-secondary" onclick="resetForm()">
-                            <i class="fas fa-undo"></i> Reset
-                        </button>
-                    </div>
-                </form>
-            </section>
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="show" checked />
+                  <span class="checkmark"></span>
+                  Tampilkan di daftar
+                </label>
+              </div>
+            </div>
 
-            <!-- Search and Filter -->
-            <section class="filter-section">
-                <div class="filter-header">
-                    <h3><i class="fas fa-search"></i> Pencarian & Filter</h3>
-                </div>
-                <div class="filter-controls">
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="Cari berdasarkan nama, klien, atau daerah...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="filter-options">
-                        <select id="filterKategori">
-                            <option value="">Semua Kategori</option>
-                            <option value="VIP">VIP</option>
-                            <option value="Regular">Regular</option>
-                            <option value="Corporate">Corporate</option>
-                            <option value="Individual">Individual</option>
-                        </select>
-                        <select id="filterStatus">
-                            <option value="">Semua Status</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Confirmed">Confirmed</option>
-                            <option value="Cancelled">Cancelled</option>
-                            <option value="Completed">Completed</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Simpan Data
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="resetForm()"
+              >
+                <i class="fas fa-undo"></i> Reset
+              </button>
+            </div>
+          </form>
+        </section>
 
-            <!-- Data Table -->
-            <section class="table-section">
-                <div class="table-header">
-                    <h3><i class="fas fa-table"></i> Data Pendaftaran</h3>
-                    <div class="table-actions">
-                        <button class="btn btn-export" onclick="exportData()">
-                            <i class="fas fa-download"></i> Export
-                        </button>
-                        <span class="data-count">Total: <span id="dataCount">0</span> data</span>
-                    </div>
-                </div>
+        <!-- Search and Filter -->
+        <section class="filter-section">
+          <div class="filter-header">
+            <h3><i class="fas fa-search"></i> Pencarian & Filter</h3>
+          </div>
+          <div class="filter-controls">
+            <div class="search-box">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari berdasarkan nama, klien, atau daerah..."
+              />
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-options">
+              <select id="filterKategori">
+                <option value="">Semua Kategori</option>
+                <option value="VIP">VIP</option>
+                <option value="Regular">Regular</option>
+                <option value="Corporate">Corporate</option>
+                <option value="Individual">Individual</option>
+              </select>
+              <select id="filterStatus">
+                <option value="">Semua Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+        </section>
 
-                <div class="table-container">
-                    <table id="dataTable" class="data-table">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Kategori</th>
-                                <th>Klien/Sumber</th>
-                                <th>PIC Klien</th>
-                                <th>Jumlah</th>
-                                <th>No. HP</th>
-                                <th>WhatsApp</th>
-                                <th>Daerah Asal</th>
-                                <th>Status</th>
-                                <th>Jam Reservasi</th>
-                                <th>Show</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody id="dataTableBody">
-                            <!-- Data akan diisi oleh JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
+        <!-- Data Table -->
+        <section class="table-section">
+          <div class="table-header">
+            <h3><i class="fas fa-table"></i> Data Pendaftaran</h3>
+            <div class="table-actions">
+              <button class="btn btn-export" onclick="exportData()">
+                <i class="fas fa-download"></i> Export
+              </button>
+              <span class="data-count"
+                >Total: <span id="dataCount">0</span> data</span
+              >
+            </div>
+          </div>
 
-                <div class="empty-state" id="emptyState">
-                    <i class="fas fa-inbox"></i>
-                    <h3>Belum ada data</h3>
-                    <p>Tambahkan data pertama Anda menggunakan form di atas</p>
-                </div>
-            </section>
-        </div>
+          <div class="table-container">
+            <table id="dataTable" class="data-table">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Kategori</th>
+                  <th>Klien/Sumber</th>
+                  <th>PIC Klien</th>
+                  <th>Jumlah</th>
+                  <th>No. HP</th>
+                  <th>WhatsApp</th>
+                  <th>Daerah Asal</th>
+                  <th>Status</th>
+                  <th>Jam Reservasi</th>
+                  <th>Show</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="dataTableBody">
+                <!-- Data akan diisi oleh JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="empty-state" id="emptyState">
+            <i class="fas fa-inbox"></i>
+            <h3>Belum ada data</h3>
+            <p>Tambahkan data pertama Anda menggunakan form di atas</p>
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- Modal Edit -->
     <div id="editModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-edit"></i> Edit Data</h3>
-                <span class="close" onclick="closeEditModal()">&times;</span>
-            </div>
-            <form id="editForm" class="data-form">
-                <input type="hidden" id="editIndex">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="editKategori">Kategori</label>
-                        <select id="editKategori" required>
-                            <option value="">Pilih Kategori</option>
-                            <option value="VIP">VIP</option>
-                            <option value="Regular">Regular</option>
-                            <option value="Corporate">Corporate</option>
-                            <option value="Individual">Individual</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editKlien">Klien / Sumber</label>
-                        <input type="text" id="editKlien" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editPic">PIC Klien</label>
-                        <input type="text" id="editPic" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editJumlah">Jumlah</label>
-                        <input type="number" id="editJumlah" min="1" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editNoHp">No. HP</label>
-                        <input type="tel" id="editNoHp" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editDaerah">Daerah Asal</label>
-                        <input type="text" id="editDaerah" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editStatus">Status</label>
-                        <select id="editStatus" required>
-                            <option value="">Pilih Status</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Confirmed">Confirmed</option>
-                            <option value="Cancelled">Cancelled</option>
-                            <option value="Completed">Completed</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="editJamReservasi">Jam Reservasi JCS</label>
-                        <input type="datetime-local" id="editJamReservasi" required>
-                    </div>
-
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="editShow">
-                            <span class="checkmark"></span>
-                            Tampilkan di daftar
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Update Data
-                    </button>
-                    <button type="button" class="btn btn-secondary" onclick="closeEditModal()">
-                        <i class="fas fa-times"></i> Batal
-                    </button>
-                </div>
-            </form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><i class="fas fa-edit"></i> Edit Data</h3>
+          <span class="close" onclick="closeEditModal()">&times;</span>
         </div>
+        <form id="editForm" class="data-form">
+          <input type="hidden" id="editIndex" />
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="editKategori">Kategori</label>
+              <select id="editKategori" required>
+                <option value="">Pilih Kategori</option>
+                <option value="VIP">VIP</option>
+                <option value="Regular">Regular</option>
+                <option value="Corporate">Corporate</option>
+                <option value="Individual">Individual</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="editKlien">Klien / Sumber</label>
+              <input type="text" id="editKlien" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editPic">PIC Klien</label>
+              <input type="text" id="editPic" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editJumlah">Jumlah</label>
+              <input type="number" id="editJumlah" min="1" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editNoHp">No. HP</label>
+              <input type="tel" id="editNoHp" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editDaerah">Daerah Asal</label>
+              <input type="text" id="editDaerah" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editStatus">Status</label>
+              <select id="editStatus" required>
+                <option value="">Pilih Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="editJamReservasi">Jam Reservasi JCS</label>
+              <input type="datetime-local" id="editJamReservasi" required />
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="editShow" />
+                <span class="checkmark"></span>
+                Tampilkan di daftar
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Update Data
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeEditModal()"
+            >
+              <i class="fas fa-times"></i> Batal
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
